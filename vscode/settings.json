@@ -1,0 +1,47 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.tips.enabled": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.formatOnSave": true,
+    "files.exclude": {
+        "**/.git": false
+    },
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "redhat.telemetry.enabled": false,
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "python.showStartPage": false,
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": ".venv/bin/black",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": ".venv/bin/pylint",
+    "python.languageServer": "Pylance",
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=rrdtool,pydantic"
+    ],
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/.venv/**": true
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "editor.largeFileOptimizations": false,
+    "[c]": {
+        "editor.wordBasedSuggestions": false,
+        "editor.suggest.insertMode": "replace",
+        "editor.semanticHighlighting.enabled": true
+    },
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "material-icon-theme"
+}

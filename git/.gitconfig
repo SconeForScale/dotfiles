@@ -1,0 +1,15 @@
+[include]
+	path = ~/.gitconfig.local
+[color]	
+	ui = auto
+[core]
+	editor = code --wait
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
