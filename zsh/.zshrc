@@ -65,10 +65,13 @@ set-mac () {
 }
 
 # exa
-alias ls="exa -a"
+alias ls="eza -a"
 
 # rg
 alias grep="rg"
+
+# bat
+alias cat="bat"
 
 # ssh tools
 ssh-keyput () {
