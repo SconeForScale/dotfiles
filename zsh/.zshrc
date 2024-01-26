@@ -71,7 +71,7 @@ alias ls="eza -a"
 alias grep="rg"
 
 # bat
-alias cat="bat"
+alias cat="bat --paging=never --style=header"
 
 # ssh tools
 ssh-keyput () {

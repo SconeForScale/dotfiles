@@ -10,7 +10,7 @@ bindsym $mod+Return exec tilix
 # lock screen
 bindsym $mod+z exec swaylock
 
-output * background $HOME/media/wallpapers/f1.jpg fill
+output * background $HOME/.dotfiles/wallpapers/1.jpg fill
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -148,5 +148,5 @@ titlebar_border_thickness 0
 #Disable boarder
 for_window [class=".*"] border pixel 0
 
-# input 1386:847:Wacom_Cintiq_Pro_13_Pen map_to_output DP-8
+input 1386:847:Wacom_Cintiq_Pro_13_Pen map_to_output DP-8
 
