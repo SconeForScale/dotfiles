@@ -10,7 +10,7 @@ bindsym $mod+Return exec tilix
 # lock screen
 bindsym $mod+z exec swaylock
 
-output * background $HOME/.dotfiles/wallpapers/1.jpg fill
+output * background $HOME/.dotfiles/wallpapers/1.jpeg fill
 
 # kill focused window
 bindsym $mod+Shift+q kill
