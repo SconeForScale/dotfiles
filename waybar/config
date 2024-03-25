@@ -122,10 +122,5 @@
 	},
 	"tray": {
 		"icon-size": 20
-	},
-	"custom/messages": {
-		"exec": "$HOME/.dotfiles/waybar/scripts/test1",
-		"interval": 3,
-		"format": "msg: {}"
 	}
 }
