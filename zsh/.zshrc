@@ -37,7 +37,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/.local/bin:/usr/local/go/bin"
 
 XDG_CURRENT_DESKTOP=sway
 
@@ -73,6 +73,11 @@ alias grep="rg"
 # bat
 alias cat="bat --paging=never --style=header"
 
+# dd with sane defaults
+ds () {
+    sudo dd if=$1 of=$2 bs=4M && sync
+}
+
 # ssh tools
 ssh-keyput () {
     ssh-copy-id -i ~/.ssh/id_ed25519.pub $USERNAME@$1
@@ -87,7 +92,7 @@ find_ext () {
     then
         echo $match
     else
-        echo "rip"
+        :
     fi
 }
 
@@ -98,7 +103,7 @@ find_tablet () {
     then
         echo $match
     else
-        echo "rip"
+        :
     fi
 }
 
