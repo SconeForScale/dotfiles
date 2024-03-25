@@ -39,7 +39,15 @@
         "editor.suggest.insertMode": "replace",
         "editor.semanticHighlighting.enabled": true
     },
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.iconTheme": "material-icon-theme",
-    "hediet.vscode-drawio.resizeImages": null
+    "[go]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "never"
+        }
+    },
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "hediet.vscode-drawio.resizeImages": null,
+    "vs-kubernetes": {
+        "vs-kubernetes.minikube-show-information-expiration": "2024-04-08T07:07:49.865Z"
+    }
 }
