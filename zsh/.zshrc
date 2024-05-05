@@ -85,9 +85,8 @@ ssh-keyput () {
 
 # display configuration
 find_ext () {
-    regex="LG\sElectronics\sLG\sULTRAGEAR\s[\w\d]+\s\((DP-\w+)\)"
+    regex="LG\sElectronics\sLG\sULTRAGEAR\s\w+\s\((DP-[0-9]+)"
     w_out=$(wlr-randr)
-    echo $w_out
     if [[ $w_out =~ $regex  ]]
     then
         echo $match
@@ -111,6 +110,7 @@ screen-ext-tablet () {
     wlr-randr --output eDP-1 --off
     wlr-randr --output $(find_ext) --on
     wlr-randr --output $(find_tablet) --on
+    swaymsg input 1386:847:Wacom_Cintiq_Pro_13_Pen map_to_output $(find_tablet)
     screen-ext-reset
 }
 

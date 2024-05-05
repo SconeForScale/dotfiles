@@ -148,5 +148,3 @@ titlebar_border_thickness 0
 #Disable boarder
 for_window [class=".*"] border pixel 0
 
-input 1386:847:Wacom_Cintiq_Pro_13_Pen map_to_output DP-8
-
