@@ -114,6 +114,15 @@ screen-ext-tablet () {
     screen-ext-reset
 }
 
+screen-tablet () {
+    screen_tablet=$(find_tablet)
+    screen_ext=$(find_ext)
+    wlr-randr --output eDP-1 --off
+    wlr-randr --output $screen_ext --off
+    wlr-randr --output $screen_ext --on
+    swaymsg input 1386:847:Wacom_Cintiq_Pro_13_Pen map_to_output $screen_tablet
+}
+
 screen-ext () {
     wlr-randr --output eDP-1 --off
     wlr-randr --output $(find_tablet) --off
@@ -150,3 +159,4 @@ bindkey "^[[3~" delete-char
 [ -f ~/.alias.local ] && source ~/.alias.local
 [ -f ~/.functions.local ] && source ~/.functions.local
 
+eval "$(atuin init zsh)"
