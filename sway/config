@@ -5,7 +5,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # terminal
-bindsym $mod+Return exec tilix
+bindsym $mod+Return exec kitty
 
 # lock screen
 bindsym $mod+z exec swaylock

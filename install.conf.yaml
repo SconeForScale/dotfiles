@@ -7,6 +7,7 @@
 
 - link:
     ~/.zshrc: zsh/.zshrc
+    ~/.config/kitty: kitty
     ~/.p10k.zsh: zsh/.p10k.zsh
     ~/.config/sway/config: sway/config
     ~/.config/waybar/config: waybar/config
@@ -17,9 +18,6 @@
 
 - shell:
     - chsh -s $(which zsh)
-    - command: dconf load /com/gexperts/Tilix/ < tilix/tilix.dconf
-      stdout: true
-      description: tilix config
     - command: mkdir -p ~/.local/share/fonts && cp -f fonts/*.ttf ~/.local/share/fonts/ && fc-cache -f
       stdout: true
       description: ttf fonts setup
