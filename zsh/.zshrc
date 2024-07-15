@@ -37,7 +37,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-PATH="$PATH:$HOME/.local/bin:/usr/local/go/bin"
+PATH="$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/.platformio/penv/bin:$HOME/.cargo/bin"
 
 XDG_CURRENT_DESKTOP=sway
 
