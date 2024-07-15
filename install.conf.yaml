@@ -9,10 +9,10 @@
     ~/.zshrc: zsh/.zshrc
     ~/.config/kitty: kitty
     ~/.p10k.zsh: zsh/.p10k.zsh
+    ~/.config/nvim: nvim
     ~/.config/sway/config: sway/config
     ~/.config/waybar/config: waybar/config
     ~/.config/waybar/style.css: waybar/style.css
-    ~/.config/nvim: nvim
     ~/.gitconfig: git/.gitconfig
     ~/.config/Code/User/settings.json: vscode/settings.json
 
@@ -24,9 +24,3 @@
     - command: mkdir -p ~/.local/share/fonts/opentype && cp -f fonts/*.otf ~/.local/share/fonts/opentype/ && fc-cache -f
       stdout: true
       description: otf fonts setup
-    - command: code --list-extensions | xargs -n 1 code --uninstall-extension
-      stdout: true
-      description: Remove vscode extensions
-    - command: cat vscode/extensions | xargs -n 1 code --install-extension
-      stdout: true
-      description: Add vscode extensions
