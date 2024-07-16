@@ -53,6 +53,9 @@ dlogs () {
     docker logs $1 2>&1 | grep $2
 }
 
+#ssh
+alias ssh="TERM=\"xterm-256color\" ssh"
+
 # go
 GOPATH=~/projects/go
 
