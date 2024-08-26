@@ -30,6 +30,7 @@ require("conform").setup({
 })
 
 require("config.gopls")
+require("config.tsserver")
 
 vim.api.nvim_create_user_command("Format", function(args)
   local range = nil
