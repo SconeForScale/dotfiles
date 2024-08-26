@@ -9,6 +9,7 @@
     ~/.zshrc: zsh/.zshrc
     ~/.config/kitty: kitty
     ~/.p10k.zsh: zsh/.p10k.zsh
+    ~/.config/atuin: atuin
     ~/.config/nvim: nvim
     ~/.config/sway/config: sway/config
     ~/.config/waybar/config: waybar/config

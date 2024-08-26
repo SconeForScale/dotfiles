@@ -37,7 +37,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-PATH="$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/.platformio/penv/bin:$HOME/.cargo/bin"
+PATH="$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/.platformio/penv/bin:$HOME/.cargo/bin:$HOME/tools/bin/:$HOME/.bun/bin"
 
 XDG_CURRENT_DESKTOP=sway
 
@@ -48,9 +48,14 @@ alias vim="nvim"
 alias pip3="/usr/bin/python3 -m pip"
 
 # docker
+
+alias dcc="docker compose"
 alias prune="yes | docker container prune && yes | docker image prune"
-dlogs () {
+dcl () {
     docker logs $1 2>&1 | grep $2
+}
+dc-attach () {
+    docker exec -it $1 bash
 }
 
 #ssh
@@ -163,3 +168,9 @@ bindkey "^[[3~" delete-char
 [ -f ~/.functions.local ] && source ~/.functions.local
 
 eval "$(atuin init zsh)"
+
+# bun completions
+[ -s "/home/***REMOVED***/.bun/_bun" ] && source "/home/***REMOVED***/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"

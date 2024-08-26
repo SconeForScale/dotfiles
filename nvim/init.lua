@@ -1,39 +1,49 @@
-vim.g.base46_cache = vim.fn.stdpath "data" .. "/nvchad/base46/"
+require("config.lazy")
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+require("config.theme")
 
--- bootstrap lazy and all plugins
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
-if not vim.loop.fs_stat(lazypath) then
-  local repo = "https://github.com/folke/lazy.nvim.git"
-  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
-end
+require("mason").setup()
 
-vim.opt.rtp:prepend(lazypath)
 
-local lazy_config = require "configs.lazy"
+require("mason-lspconfig").setup({})
 
--- load plugins
-require("lazy").setup({
-  {
-    "NvChad/NvChad",
-    lazy = false,
-    branch = "v2.5",
-    import = "nvchad.plugins",
-    config = function()
-      require "options"
-    end,
+-- not great ways to ensure linters/formatters installed so we list em here godspeed
+-- pylint black eslint
+-- require("mason-lspconfig").setup_handlers({
+--	function(server_name)
+--		require("lspconfig")[server_name].setup({})
+--	end,
+-- })
+
+require("config.cmp")
+require("config.basedpyright")
+
+require("conform").setup({
+  formatters_by_ft = {
+    python = { "black" },
   },
+})
 
-  { import = "plugins" },
-}, lazy_config)
+require("config.gopls")
 
--- load theme
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "statusline")
+vim.api.nvim_create_user_command("Format", function(args)
+  local range = nil
+  if args.count ~= -1 then
+    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+    range = {
+      start = { args.line1, 0 },
+      ["end"] = { args.line2, end_line:len() },
+    }
+  end
+  require("conform").format({ async = true, lsp_format = "fallback", range = range })
+end, { range = true })
 
-require "nvchad.autocmds"
+vim.opt.wildignore = { '*.o', '*.a', '__pycache__' }
+vim.opt.formatoptions = { n = true, j = true, t = true }
 
-vim.schedule(function()
-  require "mappings"
-end)
+vim.keymap.set('n', '<Leader>ex1', '<cmd>echo "Test 1"<cr>')
