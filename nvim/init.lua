@@ -9,7 +9,6 @@ vim.opt.expandtab = true
 
 require("mason").setup()
 
-
 require("mason-lspconfig").setup({})
 
 -- not great ways to ensure linters/formatters installed so we list em here godspeed
@@ -30,7 +29,7 @@ require("conform").setup({
 })
 
 require("config.gopls")
-require("config.tsserver")
+require("config.ts_ls")
 
 vim.api.nvim_create_user_command("Format", function(args)
   local range = nil
