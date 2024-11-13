@@ -139,9 +139,13 @@ bar swaybar_command waybar
 # XDG
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
+# key rebinds
+input "type:keyboard" {
+    xkb_options caps:ctrl_modifier
+}
+
 default_border none
 default_floating_border none
-font pango:monospace 0
 titlebar_padding 1
 titlebar_border_thickness 0
 
