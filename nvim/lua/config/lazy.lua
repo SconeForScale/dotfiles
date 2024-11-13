@@ -18,12 +18,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(
 	{
         { "nvim-lua/plenary.nvim" },
+        { "nvim-treesitter/nvim-treesitter" },
 		{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-		{
-			"williamboman/mason.nvim",
-		},
-		"williamboman/mason-lspconfig.nvim",
-    		"neovim/nvim-lspconfig",
+		{ "williamboman/mason.nvim" },
+        { "kyazdani42/nvim-tree.lua" },
+	    { "williamboman/mason-lspconfig.nvim" },
+    	{ "neovim/nvim-lspconfig" },
 		{
 			"L3MON4D3/LuaSnip",
 			version = "v2.*",
@@ -37,8 +37,8 @@ require("lazy").setup(
 			branch = "nvim-0.9",
 			opts = {}
 		},
-        { 'nvim-telescope/telescope.nvim', tag = '0.1.8' },
-        { "nvim-telescope/telescope-fzf-native.nvim", build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
+        { "nvim-telescope/telescope.nvim", tag = "0.1.8" },
+        { "nvim-telescope/telescope-fzf-native.nvim", build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release" },
 	},
 	{
 		colorscheme = { "catppuccin" },
