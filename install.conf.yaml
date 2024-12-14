@@ -15,7 +15,6 @@
     ~/.config/waybar/config: waybar/config
     ~/.config/waybar/style.css: waybar/style.css
     ~/.gitconfig: git/.gitconfig
-    ~/.config/Code/User/settings.json: vscode/settings.json
 
 - shell:
     - chsh -s $(which zsh)
