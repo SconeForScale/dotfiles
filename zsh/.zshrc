@@ -170,7 +170,7 @@ bindkey "^[[3~" delete-char
 eval "$(atuin init zsh)"
 
 # bun completions
-[ -s "/home/***REMOVED***/.bun/_bun" ] && source "/home/***REMOVED***/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
