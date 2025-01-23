@@ -73,7 +73,7 @@ set-mac () {
 }
 
 # exa
-alias ls="eza -a"
+alias ls="eza -alh"
 
 # rg
 alias grep="rg"

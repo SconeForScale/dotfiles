@@ -37,6 +37,7 @@ require("lazy").setup(
 			branch = "nvim-0.9",
 			opts = {}
 		},
+        { "simrat39/rust-tools.nvim" },
         { "nvim-telescope/telescope.nvim", tag = "0.1.8" },
         { "nvim-telescope/telescope-fzf-native.nvim", build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release" },
 	},

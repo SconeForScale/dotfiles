@@ -3,7 +3,15 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require("lspconfig").basedpyright.setup({
     capabilities = capabilities,
+    settings = {
+        python = {
+            analysis = {
+                typeCheckingMode = "basic",
+            }
+        }
+    },
     before_init = function(_, config)
+        -- handles venv usage - use local .venv if it exists, otherwise system python
         local venv_path = vim.fn.getcwd().."/.venv/bin/python"
         config.settings.python = {}
         if vim.fn.filereadable(venv_path) == 1 then

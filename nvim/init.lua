@@ -7,6 +7,7 @@ vim.opt.termguicolors = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- plugin loader
 require("config.lazy")
 
 -- movement bindings; laptop caps is bound to ctrl
@@ -41,30 +42,30 @@ end)
 -- clipboard
 vim.keymap.set({"n", "v"}, "<leader>yc", '"+y')
 
+-- theme
 require("config.theme")
+
+-- lsp servers setup
 require("mason").setup()
 require("mason-lspconfig").setup({})
 
--- not great ways to ensure linters/formatters installed so we list em here godspeed
--- pylint black eslint
--- require("mason-lspconfig").setup_handlers({
---	function(server_name)
---		require("lspconfig")[server_name].setup({})
---	end,
--- })
-
+-- completions
 require("config.cmp")
-require("config.basedpyright")
 
+-- lsp clients setup
+require("config.basedpyright") -- python
+require("config.gopls") -- go
+require("config.ts_ls") -- js
+require("config.rust_analyzer") -- rust
+
+-- formatters
 require("conform").setup({
   formatters_by_ft = {
     python = { "black" },
   },
 })
 
-require("config.gopls")
-require("config.ts_ls")
-
+-- workspace browser
 require("nvim-tree").setup({
   sort = {
     sorter = "case_sensitive",
@@ -80,6 +81,7 @@ require("nvim-tree").setup({
   },
 })
 
+-- file finder/text searcher
 require("config.telescope")
 
 -- manual format
