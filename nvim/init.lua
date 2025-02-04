@@ -17,6 +17,15 @@ vim.keymap.set({"n", "v", "i"}, "<c-k>", "<down>")
 vim.keymap.set({"n", "v", "i"}, "<c-i>", "<up>")
 vim.keymap.set({"n", "v", "i"}, "<c-l>", "<right>")
 
+-- toggle diagnostics
+vim.keymap.set("n", "<leader>td", function()
+    if vim.diagnostic.is_enabled() then
+        vim.diagnostic.disable()
+    else
+        vim.diagnostic.enable()
+    end
+end)
+
 -- ctrl+i binding breaks tab; make a new tab function
 -- this may not work in some terminals
 vim.keymap.set("i", "<tab>", function()
