@@ -20,9 +20,9 @@ vim.keymap.set({"n", "v", "i"}, "<c-l>", "<right>")
 -- toggle diagnostics
 vim.keymap.set("n", "<leader>td", function()
     if vim.diagnostic.is_enabled() then
-        vim.diagnostic.disable()
+        vim.diagnostic.enable(false)
     else
-        vim.diagnostic.enable()
+        vim.diagnostic.enable(true)
     end
 end)
 
@@ -66,6 +66,11 @@ require("config.basedpyright") -- python
 require("config.gopls") -- go
 require("config.ts_ls") -- js
 require("config.rust_analyzer") -- rust
+
+-- diagnostics
+vim.diagnostic.config({
+    virtual_text = true,
+})
 
 -- formatters
 require("conform").setup({
