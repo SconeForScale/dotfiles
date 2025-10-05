@@ -1,7 +1,7 @@
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require("lspconfig").basedpyright.setup({
+vim.lsp.config("basedpyright", {
     capabilities = capabilities,
     settings = {
         basedpyright = {

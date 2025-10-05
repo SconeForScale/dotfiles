@@ -1,6 +1,6 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require("lspconfig").ts_ls.setup({
+vim.lsp.config("ts_ls", {
     capabilities = capabilities,
     init_options = {
         preferences = {

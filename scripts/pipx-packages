@@ -1,0 +1,8 @@
+#!/usr/bin/zsh
+
+pip install pipx --force
+pipx install qmk --force 
+pipx install uv --force 
+pipx install poetry --force
+pipx install ipython --force 
+
