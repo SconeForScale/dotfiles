@@ -1,0 +1,27 @@
+#!/bin/zsh
+# Export cmus playlist to m3u with relative paths
+CMUS_PLAYLISTS="$HOME/.config/cmus/playlists"
+MUSIC_ROOT="$HOME/music"
+OUTPUT_DIR="$MUSIC_ROOT/playlists"
+ 
+mkdir -p "$OUTPUT_DIR"
+ 
+if [ ! -d "$CMUS_PLAYLISTS" ]; then
+    echo "cmus playlists directory not found: $CMUS_PLAYLISTS"
+    exit 1
+fi
+ 
+count=0
+for playlist in "$CMUS_PLAYLISTS"/*; do
+    [ -f "$playlist" ] || continue
+    name=$(basename "$playlist")
+    [ "$name" = "default" ] && continue
+    output="$OUTPUT_DIR/${name}.m3u"
+ 
+    # Convert absolute paths to relative (from the music root)
+    sed "s|^${MUSIC_ROOT}/||" "$playlist" > "$output"
+    echo "Exported: $output"
+    count=$((count + 1))
+done
+ 
+echo "Done. Exported $count playlist(s) to $OUTPUT_DIR"
