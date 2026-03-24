@@ -13,3 +13,5 @@
 	defaultBranch = main
 [credential]
 	helper = store
+[rerere]
+	enabled = true
