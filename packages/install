@@ -1,0 +1,2 @@
+dnf install $(cat base)
+dnf group install $(cat group)
