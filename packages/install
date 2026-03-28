@@ -1,2 +1,3 @@
+dnf install $(cat repos)
 dnf install $(cat base)
 dnf group install $(cat group)
