@@ -6,7 +6,10 @@ vim.lsp.config("basedpyright", {
     settings = {
         basedpyright = {
             analysis = {
-                typeCheckingMode = "basic",
+                typeCheckingMode = "standard",
+                diagnosticSeverityOverrides = {
+                    reportMissingTypeStubs = false,
+                },
                 exclude = {
                     "~/*",
                     "!~/projects/**",
