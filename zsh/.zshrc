@@ -88,7 +88,22 @@ ds () {
 
 # ssh tools
 ssh-keyput () {
-    ssh-copy-id -i ~/.ssh/id_ed25519.pub $USERNAME@$1
+    ssh-copy-id -i ~/.ssh/id_ed25519.pub $1@$2
+}
+
+# directory traversal
+up () {
+    local d=""
+    limit=$1
+    for ((i=1 ; i <= limit ; i++))
+        do
+            d=$d/..
+        done
+    d=$(echo $d | sed 's/^\///')
+    if [ -z "$d" ]; then
+        d=..
+    fi
+    cd $d
 }
 
 # display configuration
