@@ -1,0 +1,12 @@
+[Unit]
+Description=Dock service
+After=graphical.target
+Wants=graphical.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+Type=simple
+ExecStart=%h/.dotfiles/scripts/desk-dock
+
+[Install]
+WantedBy=default.target

@@ -12,9 +12,11 @@
     ~/.config/atuin: atuin
     ~/.config/nvim: nvim
     ~/.config/sway/config: sway/config
+    ~/.config/sway/config.base: sway/config.base
     ~/.config/waybar/config: waybar/config
     ~/.config/waybar/style.css: waybar/style.css
     ~/.gitconfig: git/.gitconfig
+    ~/.config/systemd/user/desk-dock.service: systemd/desk-dock.service
 
 - shell:
     - chsh -s $(which zsh)
@@ -24,3 +26,8 @@
     - command: mkdir -p ~/.local/share/fonts/opentype && cp -f fonts/*.otf ~/.local/share/fonts/opentype/ && fc-cache -f
       stdout: true
       description: otf fonts setup
+    - command: "[ -f ~/.config/sway/config.mod ] || echo 'set $mod Mod4' > ~/.config/sway/config.mod"
+      description: create initial sway mod key config
+    - command: systemctl --user daemon-reload && systemctl --user enable desk-dock.service
+      stdout: true
+      description: enable desk-dock systemd service
