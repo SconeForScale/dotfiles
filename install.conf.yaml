@@ -17,6 +17,7 @@
     ~/.config/waybar/style.css: waybar/style.css
     ~/.gitconfig: git/.gitconfig
     ~/.config/systemd/user/desk-dock.service: systemd/desk-dock.service
+    ~/.cargo/config.toml: cargo/config.toml
 
 - shell:
     - chsh -s $(which zsh)
