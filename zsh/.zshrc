@@ -81,6 +81,10 @@ alias grep="rg"
 # bat
 alias cat="bat --paging=never --style=header"
 
+# ears
+alias ears-up="$HOME/.dotfiles/scripts/ears-up"
+alias ears-down="$HOME/.dotfiles/scripts/ears-down"
+
 # dd with sane defaults
 ds () {
     sudo dd if=$1 of=$2 bs=4M && sync
