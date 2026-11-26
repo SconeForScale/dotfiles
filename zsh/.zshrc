@@ -37,7 +37,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-PATH="$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/.platformio/penv/bin:$HOME/.cargo/bin:$HOME/tools/bin/:$HOME/.bun/bin"
+PATH="$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/.platformio/penv/bin:$HOME/.cargo/bin:$HOME/tools/bin/:$HOME/.bun/bin:$HOME/.rustup/toolchains/esp/xtensa-esp-elf/esp-15.2.0_20250920/xtensa-esp-elf/bin"
+
+#esp xtensa
+export LIBCLANG_PATH="/home/klevasseur/.rustup/toolchains/esp/xtensa-esp32-elf-clang/esp-20.1.1_20250829/esp-clang/lib"
 
 XDG_CURRENT_DESKTOP=sway
 

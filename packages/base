@@ -1,10 +1,13 @@
 sway-config-fedora
 zsh
+atuin
 neovim
 eza
 dmenu
+minicom
 pavucontrol
 glow
+yq
 powerline
 python3-devel
 tilix
@@ -25,3 +28,5 @@ binwalk
 jo
 httpie
 cmus
+mosh
+ncdu
